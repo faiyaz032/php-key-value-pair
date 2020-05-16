@@ -142,7 +142,7 @@ class Core
         }
     }
 
-    public function hmgetAll($key)
+    public function hgetAll($key)
     {
         $keyExists = array_key_exists($key, $this->data);
         if($keyExists){
