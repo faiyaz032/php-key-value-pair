@@ -83,4 +83,12 @@ class Core
             return $newArray;
         }
     }
+
+    public function rpop($key)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if($keyExists){
+            array_pop($this->data[$key]);
+        }
+    }
 }
