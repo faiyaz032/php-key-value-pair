@@ -87,7 +87,7 @@ class Core
     public function rpop($key)
     {
         $keyExists = array_key_exists($key, $this->data);
-        if($keyExists){
+        if ($keyExists) {
             array_pop($this->data[$key]);
         }
     }
@@ -95,8 +95,15 @@ class Core
     public function unsetKey($key)
     {
         $keyExists = array_key_exists($key, $this->data);
-        if($keyExists){
+        if ($keyExists) {
             unset($this->data[$key]);
         }
+    }
+
+    //Hashes
+    
+    public function hset($key, $field, $value)
+    {
+        $this->data[$key][$field] = $value;
     }
 }
