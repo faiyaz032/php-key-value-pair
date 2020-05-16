@@ -84,6 +84,16 @@ class Core
         }
     }
 
+    public function exists($key)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if ($keyExists) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function rpop($key)
     {
         $keyExists = array_key_exists($key, $this->data);
@@ -101,7 +111,7 @@ class Core
     }
 
     //Hashes
-    
+
     public function hset($key, $field, $value)
     {
         $this->data[$key][$field] = $value;
@@ -110,9 +120,9 @@ class Core
     public function hget($key, $field)
     {
         $keyExists = array_key_exists($key, $this->data);
-        if($keyExists){
+        if ($keyExists) {
             return $this->data[$key][$field];
-        }else{
+        } else {
             return false;
         }
     }
