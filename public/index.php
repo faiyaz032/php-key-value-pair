@@ -7,8 +7,12 @@ include_once '../vendor/autoload.php';
 $core = new Core;
 
 //Entry Point
-$core->set('int', 99);
-$core->decrement('int');
-$get = $core->get('int');
+
+$core->set('student', [
+    'name' => 'faiyaz'
+]);
+$core->lpush('student', ['gender' => 'male']);
+$get = $core->get('student');
+
 
 print_r($get);
