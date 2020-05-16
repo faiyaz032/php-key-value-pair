@@ -25,4 +25,14 @@ class Core
             return null;
         }
     }
+
+    public function increment($key, $incrementValue = 1)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if($keyExists){
+            $this->set($key, $this->get($key) + $incrementValue);
+        }else{
+            $this->set($key, $incrementValue);
+        }
+    }
 }

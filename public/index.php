@@ -7,5 +7,8 @@ include_once '../vendor/autoload.php';
 $core = new Core;
 
 //Entry Point
-$core->set('name', 'faiyaz');
-$get = $core->get('name');
+$core->set('int', 99);
+$core->increment('int');
+$get = $core->get('int');
+
+print_r($get);
