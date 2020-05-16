@@ -14,7 +14,10 @@ $core->set('student', [
 $core->lpush('student', ['gender' => 'male']);
 $core->rpush('student', ['age' => 18]);
 $core->rpop('student');
-$get = $core->get('student');
+
+//Hashes
+$core->hset('student', 'name' , 'faiyaz');
+$get = $core->hget('student', 'name');
 
 
 print_r($get);
