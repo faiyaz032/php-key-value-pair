@@ -149,4 +149,12 @@ class Core
             return $this->data[$key];
         }
     }
+
+    public function hdelete($key)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if ($keyExists) {
+            unset($this->data[$key]);
+        }
+    }
 }
