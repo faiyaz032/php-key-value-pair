@@ -12,6 +12,7 @@ $core->set('student', [
     'name' => 'faiyaz'
 ]);
 $core->lpush('student', ['gender' => 'male']);
+$core->rpush('student', ['age' => 18]);
 $get = $core->get('student');
 
 
