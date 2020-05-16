@@ -8,7 +8,7 @@ $core = new Core;
 
 //Entry Point
 $core->set('int', 99);
-$core->increment('int');
+$core->decrement('int');
 $get = $core->get('int');
 
 print_r($get);
