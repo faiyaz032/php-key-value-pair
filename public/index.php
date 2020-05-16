@@ -17,7 +17,8 @@ $core->rpop('student');
 
 //Hashes
 $core->hset('student', 'name' , 'faiyaz');
-$get = $core->hget('student', 'name');
+$core->hmset('student1', ['name' , 'age', 'gender'], ['faiyaz', 16, 'male']);
+
 
 
 print_r($get);

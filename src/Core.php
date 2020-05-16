@@ -126,4 +126,27 @@ class Core
             return false;
         }
     }
+
+    public function hmset($key,$field,$value)
+    {
+        if(!$this->exists($key)){
+            if(!is_array($field) && !is_array($value)){
+                $this->hset($key,$field,$value);
+            }else{
+                for($i = 0; $i < count($field); $i++){
+                    $this->data[$key][$field[$i]] = $value[$i];
+                }
+            }
+        }else{
+            return null;
+        }
+    }
+
+    public function hmgetAll($key)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if($keyExists){
+            return $this->data[$key];
+        }
+    }
 }
