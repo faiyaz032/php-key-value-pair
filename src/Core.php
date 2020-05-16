@@ -91,4 +91,12 @@ class Core
             array_pop($this->data[$key]);
         }
     }
+
+    public function unsetKey($key)
+    {
+        $keyExists = array_key_exists($key, $this->data);
+        if($keyExists){
+            unset($this->data[$key]);
+        }
+    }
 }
